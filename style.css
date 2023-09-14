@@ -1,0 +1,203 @@
+@import url(boiler-plate.css);
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: hsl(217, 100%, 97%);
+}
+
+.container{
+    background-image: url(/assets/images/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar{
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding:2rem;
+}
+
+.number{
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:30px;
+    height: 30px;
+    background-color: transparent;
+    color:white;
+    border:1px solid white;
+    margin-right:1rem;
+}
+
+.step-one-details,
+.step-two-details,
+.step-three-details,
+.step-four-details{
+    display: none;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width:90%;
+    border-radius: 10px;
+    padding:2rem 1.5rem;
+}
+
+.personal-info h1{
+    font-size: 1.5rem;
+    color:hsl(213, 96%, 18%);
+    margin-bottom: .5rem;
+    font-family:inherit;
+}
+.personal-info p{
+    font-size: 1rem;
+    width:90%;
+    color:hsl(231, 11%, 63%);
+    margin-bottom:1rem;
+    font-family:inherit;
+}
+
+label{
+    font-size: .9rem;
+    display: block;
+    color:hsl(213, 96%, 18%);
+}
+
+label:nth-last-of-type(2),
+label:nth-last-of-type(1){
+    margin-top:.5rem;
+}
+
+input{
+    width:100%;
+    border-radius:5px;
+    border:1px solid hsl(231, 11%, 63%);
+    padding:.5rem 1rem;
+    color:hsl(213, 96%, 18%);
+}
+
+input::placeholder{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: bold;
+}
+
+button:first-of-type{
+    border:none;
+    color:hsl(231, 11%, 63%);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.buttons{
+    background-color: white;
+    width:100%;
+    position: absolute;
+    bottom:0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    padding:1rem 2rem;
+}
+
+button:last-of-type{
+    padding:.5rem 1rem;
+    background-color:hsl(213, 96%, 18%);
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+@media screen and (min-width:809px){
+
+    .number{
+        width:50px;
+        height:50px;
+    }
+    .personal-info h1{
+        font-size: 2.3rem;
+    }
+
+    .personal-info p{
+        font-size: 1.2rem;
+    }
+
+    .form{
+        width:60%;
+        padding-bottom:10rem;
+    }
+
+    label{
+        font-size: 1.2rem;
+    }
+
+    label:nth-last-of-type(1),
+    label:nth-last-of-type(2){
+        /* color:red; */
+        margin-top: 1rem;
+    }
+
+    input{
+        height:3rem;
+    }
+
+    button{
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 992px){
+
+    .container{
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        background-image: url(/assets/images/bg-sidebar-desktop.svg);
+        border:15px solid white;
+        border-radius: 20px;
+    }
+
+    .sidebar{
+        flex-direction: column;
+        justify-content: flex-start;
+        height:100%;
+        /* width:100%; */
+        border:1px solid red;
+    }
+
+    .sidebar h2{
+        color:white;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .sidebar h3{
+        font-weight: normal;
+        color:hsl(229, 24%, 87%);
+        font-size: 1rem;
+    }
+
+    .step-one-details,
+    .step-two-details,
+    .step-three-details,
+    .step-four-details{
+    display: block;
+    }   
+
+    .step-one,
+    .step-two,
+    .step-three,
+    .step-four{
+    display: flex;
+    align-items: center;
+    margin-bottom:1.5rem;
+    /* border:1px solid white; */
+    }
+}

@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Multi-step form</title>
-
+  
 </head>
 <body>
   <section class="container">
@@ -44,25 +46,63 @@
     </article>
 
     <article class="form">
-      <div class="personal-info">
-        <h1>Personal info</h1>
-        <p>Please provide your name, email adress, and phone number.</p>
-      </div>
       <form action="submit">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="e.g. John Doe">
-        <label for="email">Email Adress</label>
-        <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com">
-        <label for="phone">Phone Number</label>
-        <input type="text" id="phone" placeholder="e.g. +89 89 989">
+        <div class="page page-1">
+          <div class="personal-info">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email adress, and phone number.</p>
+          </div>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="e.g. John Doe">
+          <label for="email">Email Adress</label>
+          <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" placeholder="e.g. +89 89 989">
+        </div>
+        <div class="page page-2">
+          <div class="personal-info">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="e.g. John Doe">
+          <label for="email">Email Adress</label>
+          <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" placeholder="e.g. +89 89 989">
+        </div>
+        <div class="page page-3">
+          <div class="personal-info">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="e.g. John Doe">
+          <label for="email">Email Adress</label>
+          <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" placeholder="e.g. +89 89 989">
+        </div>
+        <div class="page page-4">
+          <div class="personal-info">
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+          </div>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="e.g. John Doe">
+          <label for="email">Email Adress</label>
+          <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" placeholder="e.g. +89 89 989">
+        </div>
       </form>
       <div class="buttons">
-        <button type="button">Go back</button>
-        <button type="button">Next Step</button>
+        <button type="button" class="prev">Go back</button>
+        <button type="button" class="next">Next Step</button>
       </div>
     </article>
   </section>
 
-  
+<script src="script.js"></script>
 </body>
 </html>

@@ -115,6 +115,12 @@ button:last-of-type{
     cursor: pointer;
 }
 
+.page-2,
+.page-3,
+.page-4{
+    display: none;
+}
+
 @media screen and (min-width:809px){
 
     .number{

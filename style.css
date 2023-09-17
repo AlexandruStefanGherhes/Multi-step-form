@@ -1,6 +1,9 @@
 @import url(boiler-plate.css);
 
 body{
+    display: flex;
+    justify-content: center;
+    height:100vh;
     font-family: 'Ubuntu', sans-serif;
     background-color: hsl(217, 100%, 97%);
 }
@@ -32,6 +35,7 @@ body{
     color:white;
     border:1px solid white;
     margin-right:1rem;
+    font-weight: bold;
 }
 
 .step-one-details,
@@ -88,11 +92,12 @@ input::placeholder{
     font-size: bold;
 }
 
-button:first-of-type{
+.prev{
     border:none;
     color:hsl(231, 11%, 63%);
     background-color: transparent;
     cursor: pointer;
+    padding:.5rem 1rem;
 }
 
 .buttons{
@@ -106,7 +111,7 @@ button:first-of-type{
     padding:1rem 2rem;
 }
 
-button:last-of-type{
+.next{
     padding:.5rem 1rem;
     background-color:hsl(213, 96%, 18%);
     color:white;
@@ -119,6 +124,122 @@ button:last-of-type{
 .page-3,
 .page-4{
     display: none;
+}
+
+.second-page{
+    display: flex;
+    gap:1rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.second-page-btn{
+    padding:.6rem;
+    width:100%;
+    background-color: transparent;
+    border:1px solid lightgray;
+    border-radius: 10px;
+}
+
+/* toggle button */
+
+.switch{
+    position: relative;
+    display: inline-block;
+    margin: 0 1.5rem;
+    width: 40px;
+    height: 23px;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    inset:0;
+    background-color: #ccc;
+    transition: .4s;
+    background-color: hsl(213, 96%, 18%);
+}
+
+.slider::before{
+    position:absolute;
+    content: '';
+    /* height: 26px;
+    width: 26px; */
+    height: 15px;
+    width: 15px;
+    left:4px;
+    bottom:4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider{
+    background-color: hsl(213, 96%, 18%);
+}
+
+input:checked + .slider:before{
+    transform: translateX(17px);
+}
+
+.slider.round{
+    border-radius:34px;
+}
+
+.slider.round:before{
+    border-radius: 50%;
+}
+
+.toggle{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: hsl(231, 100%, 99%);
+    padding:1rem 0;
+    width:100%;
+    border-radius: 10px;
+}
+
+.bonus{
+    color: hsl(213, 96%, 18%);
+}
+
+.hide{
+    display: none;
+}
+
+.arcade,
+.advanced,
+.pro{
+    display: flex;
+    cursor: pointer;
+}
+
+.second-page-btn:focus{
+    background-color: hsl(217, 100%, 97%);
+    border:1px solid hsl(243, 100%, 62%);
+}
+
+.thumbnail{
+    display: flex;
+    flex-direction: column;
+    padding-left:.5rem;
+    text-align: start;
+}
+
+.thumbnail h4{
+    color:hsl(213, 96%, 18%);
+}
+
+.thumbnail p{
+    font-size: 14px;
+    color:hsl(231, 11%, 63%);
 }
 
 @media screen and (min-width:809px){
@@ -161,6 +282,13 @@ button:last-of-type{
 
 @media only screen and (min-width: 992px){
 
+    body{
+        align-items: center;
+    }
+    section{
+        height: 70vh;
+    }
+
     .container{
         flex-direction: row;
         justify-content: space-between;
@@ -174,8 +302,10 @@ button:last-of-type{
         flex-direction: column;
         justify-content: flex-start;
         height:100%;
-        /* width:100%; */
-        border:1px solid red;
+        border-radius:15px;
+        padding-top:3rem;
+        width:35%;
+        border: 1px solid red;
     }
 
     .sidebar h2{
@@ -195,7 +325,24 @@ button:last-of-type{
     .step-three-details,
     .step-four-details{
     display: block;
-    }   
+    line-height: 1.3;
+    }
+    
+    .step-one-details h2,
+    .step-two-details h2,
+    .step-three-details h2,
+    .step-four-details h2{
+    font-size: 1rem;
+    font-weight: bold;
+    }
+
+    .step-one-details h3,
+    .step-two-details h3,
+    .step-three-details h3,
+    .step-four-details h3{
+    font-size: .8rem;
+    font-weight: 100;
+    }
 
     .step-one,
     .step-two,
@@ -206,4 +353,34 @@ button:last-of-type{
     margin-bottom:1.5rem;
     /* border:1px solid white; */
     }
+
+    .form{
+        position: relative;
+        height:100%;
+        border-radius:0;
+        padding: 2rem 3rem;
+        /* border:1px solid red; */
+    }
+
+    .buttons{
+        position: absolute;
+        justify-content: center;
+        padding:0 3rem;
+        padding-bottom: 1rem;
+    }
+
+    .prev{
+        margin-right:auto;
+    }
+
+    .next{
+        margin-left:auto;
+    }
+
+    .number{
+        width:35px;
+        height:35px;
+    }
+
+
 }

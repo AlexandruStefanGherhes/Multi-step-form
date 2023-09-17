@@ -64,12 +64,40 @@
             <h1>Select your plan</h1>
             <p>You have the option of monthly or yearly billing.</p>
           </div>
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="e.g. John Doe">
-          <label for="email">Email Adress</label>
-          <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com">
-          <label for="phone">Phone Number</label>
-          <input type="text" id="phone" placeholder="e.g. +89 89 989">
+          <div class="second-page">
+            <button type='button' class="second-page-btn arcade">
+              <img src="/assets/images/icon-arcade.svg" alt="arcade-icon">
+              <div class="arcade-details thumbnail">
+                <h4>Arcade</h2>
+                <p>$9/mo</p>
+                <p class="bonus">2 months free</p>
+              </div>
+            </button>
+            <button type='button' class="second-page-btn advanced">
+              <img src="/assets/images/icon-advanced.svg" alt="advanced-icon">
+              <div class="arcade-details thumbnail">
+                <h4>Advanced</h2>
+                <p>$12/mo</p>
+                <p class="bonus">2 months free</p>
+              </div>
+            </button>
+            <button type='button' class="second-page-btn pro">
+              <img src="/assets/images/icon-pro.svg" alt="pro-icon">
+              <div class="arcade-details thumbnail">
+                <h4>Pro</h2>
+                <p>$15/mo</p>
+                <p class="bonus">2 months free</p>
+              </div>
+            </button>
+            <div class="toggle"> 
+              <p class="monthly">Monthly</p>
+              <label class="switch">
+                <input type="checkbox" class="toggle" >
+                <span class="slider round"></span>
+              </label>
+              <p class="yearly">Yearly</p>
+            </div>
+          </div>
         </div>
         <div class="page page-3">
           <div class="personal-info">
@@ -95,11 +123,11 @@
           <label for="phone">Phone Number</label>
           <input type="text" id="phone" placeholder="e.g. +89 89 989">
         </div>
+        <div class="buttons">
+          <button type="button" class="prev">Go back</button>
+          <button type="button" class="next">Next Step</button>
+        </div>
       </form>
-      <div class="buttons">
-        <button type="button" class="prev">Go back</button>
-        <button type="button" class="next">Next Step</button>
-      </div>
     </article>
   </section>
 

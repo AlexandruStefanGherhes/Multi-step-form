@@ -3,6 +3,8 @@ const numbers = document.querySelectorAll('.number')
 const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
 const toggle = document.querySelector('.slider')
+const bonus = document.querySelectorAll('.bonus')
+const membership = document.querySelectorAll('.membership')
 
 let pageIndex = 1;
 showNumbers()
@@ -11,13 +13,22 @@ prevBtn.addEventListener('click', pageDown)
 
 // toggle input
 toggle.addEventListener('click', toggleMembership)
-const bonus = document.querySelectorAll('.bonus')
+
+// hide yearly bonus
 function work(){
     for(let each of bonus){
         each.classList.add('hide')
     }
 }
 
+// add membership details
+const monthly = ['+1$/mo','+2$/mo','+3$/mo']
+const yearly = ['+10$/yr','+20$/yr','+30$/yr']
+function membershipShow(text){
+    for(i=0;i < membership.length;i++){
+        membership[i].innerHTML = `${text[i]}`
+    }
+}
 
 let clicked = true
 toggleMembership()
@@ -26,27 +37,21 @@ function toggleMembership(){
     if(clicked){
         document.querySelector('.monthly').style.color = 'hsl(231, 11%, 63%)'
         document.querySelector('.yearly').style.color = 'hsl(213, 96%, 18%)'
-        // document.querySelector('.bonus').classList.add('hide')
-        // document.querySelectorAll('.bonus').forEach((cell),  function(){
-        //     cell.classList.add('hide')
-        // })
-        // work()
         for(let each of bonus){
             each.classList.add('hide')
         }
+       membershipShow(yearly)
     }else{
         document.querySelector('.yearly').style.color = 'hsl(231, 11%, 63%)'
         document.querySelector('.monthly').style.color = 'hsl(213, 96%, 18%)'
-        // document.querySelector('.bonus').classList.remove('hide')
-        // document.querySelectorAll('.bonus').forEach((cell), function(){
-        //     cell.classList.remove('hide')
-        // })
         for(let each of bonus){
             each.classList.remove('hide')
         }
+        membershipShow(monthly)
     }
 }
 
+// hightlight step number
 function showNumbers(){
     for(let i=0;i<pages.length;i++){
         numbers[i].style.backgroundColor = 'transparent'
@@ -58,7 +63,7 @@ function showNumbers(){
     numbers[pageIndex-1].style.border = 'none'
 }
 
-
+// flip thru pages
 function pageUp(){
     if(pageIndex < pages.length){
         pageIndex++
@@ -79,6 +84,7 @@ function pageDown(){
     }
 }
 
+// hide all pages
 function hideAllPages(){
     for(let page of pages){
         page.style.display = 'none'
@@ -86,7 +92,7 @@ function hideAllPages(){
     pages[pageIndex-1].style.display = 'block'
 }
 
-
+// show/hide buttons
 function displayButtons(){
     prevBtn.style.display = pageIndex === 1 ? 'none' : 'block'
     nextBtn.style.display = pageIndex === pages.length ? 'none' : 'block'

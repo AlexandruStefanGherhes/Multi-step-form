@@ -5,6 +5,12 @@ const nextBtn = document.querySelector('.next')
 const toggle = document.querySelector('.slider')
 const bonus = document.querySelectorAll('.bonus')
 const membership = document.querySelectorAll('.membership')
+const plans = document.querySelectorAll('.third-page-btn')
+const selection = document.querySelectorAll('.second-page-btn')
+const plansCheckbox = document.querySelectorAll('.select-plan')
+const inputs = document.querySelectorAll('input[type=text]')
+const form = document.querySelector('form')
+
 
 let pageIndex = 1;
 showNumbers()
@@ -21,6 +27,30 @@ function work(){
     }
 }
 
+// highlight selection
+selection.forEach((button) =>{
+button.addEventListener('click',()=>{
+    for(let i=0; i<selection.length; i++){
+        selection[i].classList.remove('focus')
+    }
+    button.classList.add('focus')
+})
+})
+
+// highlight plans
+plans.forEach((plan,index) =>{
+    plan.addEventListener('click',()=>{
+    for(let i=0;i<selection.length;i++){
+        plans[i].classList.remove('focus')
+    }
+    plansCheckbox.forEach(plan=>{
+        plan.checked = false
+        })
+        plan.classList.add('focus')
+        plansCheckbox[index].checked = true
+        })
+})
+
 // add membership details
 const monthly = ['+1$/mo','+2$/mo','+3$/mo']
 const yearly = ['+10$/yr','+20$/yr','+30$/yr']
@@ -30,20 +60,21 @@ function membershipShow(text){
     }
 }
 
-let clicked = true
+let clicked = false
 toggleMembership()
 function toggleMembership(){
     clicked = !clicked
     if(clicked){
-        document.querySelector('.monthly').style.color = 'hsl(231, 11%, 63%)'
-        document.querySelector('.yearly').style.color = 'hsl(213, 96%, 18%)'
+        document.querySelector('.yearly').style.color = 'hsl(231, 11%, 63%)'
+        document.querySelector('.monthly').style.color = 'hsl(213, 96%, 18%)'
         for(let each of bonus){
             each.classList.add('hide')
         }
-       membershipShow(yearly)
+        membershipShow(yearly)
     }else{
-        document.querySelector('.yearly').style.color = 'hsl(231, 11%, 63%)'
-        document.querySelector('.monthly').style.color = 'hsl(213, 96%, 18%)'
+
+        document.querySelector('.monthly').style.color = 'hsl(231, 11%, 63%)'
+        document.querySelector('.yearly').style.color = 'hsl(213, 96%, 18%)'
         for(let each of bonus){
             each.classList.remove('hide')
         }
@@ -63,6 +94,7 @@ function showNumbers(){
     numbers[pageIndex-1].style.border = 'none'
 }
 
+
 // flip thru pages
 function pageUp(){
     if(pageIndex < pages.length){
@@ -71,6 +103,7 @@ function pageUp(){
         displayButtons()
         console.log(pageIndex)
         showNumbers()
+        result()
     }
 }
 
@@ -96,4 +129,19 @@ function hideAllPages(){
 function displayButtons(){
     prevBtn.style.display = pageIndex === 1 ? 'none' : 'block'
     nextBtn.style.display = pageIndex === pages.length ? 'none' : 'block'
+}
+
+// display result
+
+function result(){
+    const plan = document.querySelector('.selected-plan')
+    const planPrice = document.querySelector('.category-price')
+    const online = document.querySelector('.online')
+    const onlinePrice = document.querySelector('.online-price')
+    const storage = document.querySelector('.storage')
+    const storagePrice = document.querySelector('.storage-price')
+    const totalPlan = document.querySelector('.total-plan')
+    const totalPrice = document.querySelector('.total-price')
+
+
 }

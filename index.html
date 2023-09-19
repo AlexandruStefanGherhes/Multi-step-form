@@ -53,11 +53,11 @@
             <p>Please provide your name, email adress, and phone number.</p>
           </div>
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="e.g. John Doe">
+          <input type="text" id="name" placeholder="e.g. John Doe" required>
           <label for="email">Email Adress</label>
-          <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com">
+          <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com" required>
           <label for="phone">Phone Number</label>
-          <input type="text" id="phone" placeholder="e.g. +89 89 989">
+          <input type="text" id="phone" placeholder="e.g. +89 89 989" required>
         </div>
         <div class="page page-2">
           <div class="personal-info">
@@ -68,7 +68,7 @@
             <button type='button' class="second-page-btn arcade">
               <img src="/assets/images/icon-arcade.svg" alt="arcade-icon">
               <div class="arcade-details thumbnail">
-                <h4>Arcade</h2>
+                <h4 class="plan-data">Arcade</h2>
                 <p>$9/mo</p>
                 <p class="bonus">2 months free</p>
               </div>
@@ -76,7 +76,7 @@
             <button type='button' class="second-page-btn advanced">
               <img src="/assets/images/icon-advanced.svg" alt="advanced-icon">
               <div class="arcade-details thumbnail">
-                <h4>Advanced</h2>
+                <h4 class="plan-data">Advanced</h2>
                 <p>$12/mo</p>
                 <p class="bonus">2 months free</p>
               </div>
@@ -84,7 +84,7 @@
             <button type='button' class="second-page-btn pro">
               <img src="/assets/images/icon-pro.svg" alt="pro-icon">
               <div class="arcade-details thumbnail">
-                <h4>Pro</h2>
+                <h4 class="plan-data">Pro</h2>
                 <p>$15/mo</p>
                 <p class="bonus">2 months free</p>
               </div>
@@ -106,7 +106,7 @@
           </div>
           <div class="add-ons">
             <button type='button' class="third-page-btn">
-              <input type="checkbox">
+              <input type="checkbox" class='select-plan'>
               <div class="text">
                 <h3>Online Service</h3>
                 <p>Access to multiplayer games</p>
@@ -114,7 +114,7 @@
               <p class="membership"></p>
             </button>
             <button type='button' class="third-page-btn">
-              <input type="checkbox">
+              <input type="checkbox" class='select-plan'>
               <div class="text">
                 <h3>Larger Storage</h3>
                 <p>Extra 1TB of cloud save</p>
@@ -122,7 +122,7 @@
               <p class="membership"></p>
             </button>
             <button type='button' class="third-page-btn">
-              <input type="checkbox">
+              <input type="checkbox" class='select-plan'>
               <div class="text">
                 <h3>Customizable profile</h3>
                 <p>Custom theme on your profile</p>
@@ -137,7 +137,29 @@
             <p>Double-check everything looks OK before confirming.</p>
           </div>
           <div class="summary">
-            
+            <div class="category">
+              <div class="category-details">
+                <p class="selected-plan">Arcade</p>
+                <a href="#">Change</a>
+              </div>
+                <p class="category-price">2</p>
+            </div>
+
+            <div class="summary-service">
+              <div class="service-selection">
+                <p class="online">online</p>
+                <p class="online-price">2</p>
+              </div>
+              <div class="storage-selection">
+                <p class="storage">storage</p>
+                <p class="storage-price">3</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="total">
+            <p class="total-plan">Total</p>
+            <p class="total-price">price</p>
           </div>
         </div>
         <div class="buttons">

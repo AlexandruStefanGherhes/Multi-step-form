@@ -17,6 +17,7 @@ showNumbers()
 nextBtn.addEventListener('click',pageUp)
 prevBtn.addEventListener('click', pageDown)
 
+
 // toggle input
 toggle.addEventListener('click', toggleMembership)
 
@@ -72,7 +73,6 @@ function toggleMembership(){
         }
         membershipShow(yearly)
     }else{
-
         document.querySelector('.monthly').style.color = 'hsl(231, 11%, 63%)'
         document.querySelector('.yearly').style.color = 'hsl(213, 96%, 18%)'
         for(let each of bonus){
@@ -101,9 +101,10 @@ function pageUp(){
         pageIndex++
         hideAllPages()
         displayButtons()
-        console.log(pageIndex)
+        // console.log(pageIndex)
         showNumbers()
         result()
+        showSubmit()
     }
 }
 
@@ -114,6 +115,18 @@ function pageDown(){
         displayButtons()
         console.log(pageIndex)
         showNumbers()
+        showSubmit()
+    }
+}
+
+// show submit btn
+function showSubmit(){
+    if(pageIndex === pages.length){
+        nextBtn.style.display = 'none'
+        document.querySelector('.submit').style.display = 'block'
+    }else{
+        nextBtn.style.display = 'block'
+        document.querySelector('.submit').style.display = 'none'
     }
 }
 
@@ -142,6 +155,20 @@ function result(){
     const storagePrice = document.querySelector('.storage-price')
     const totalPlan = document.querySelector('.total-plan')
     const totalPrice = document.querySelector('.total-price')
-
-
+    selection.forEach(each =>{
+        each.addEventListener('click',()=>{
+            if(each.classList.contains('focus')){
+                const title = each.querySelector('.plan-data').textContent
+                const price = each.querySelector('.plan-price').textContent
+                if(clicked){
+                    plan.innerHTML = title + `(Yearly)`
+                    planPrice.innerHTML = `${price}`
+                }else{
+                    plan.innerHTML = title + '(Monthly)'
+                    planPrice.innerHTML = `${price}`
+                }
+                clicked=!clicked
+            }
+        })
+    })
 }

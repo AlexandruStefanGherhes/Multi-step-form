@@ -109,6 +109,10 @@ label:nth-last-of-type(1){
     display: flex;
     justify-content: space-between;
     padding:1rem 2rem;
+    position: absolute;
+    justify-content: center;
+        /* padding:0 3rem;
+        padding-bottom: 1rem; */
 }
 
 .next{
@@ -372,6 +376,16 @@ a{
     color: hsl(243, 100%, 62%);
     font-weight: bold;
     font-size: 1.1rem;
+}
+
+.submit{
+    display: none;
+    padding:.5rem 1rem;
+    background-color:hsl(243, 100%, 62%);
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
 }
 
 @media screen and (min-width:809px){

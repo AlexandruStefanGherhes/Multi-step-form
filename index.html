@@ -2,175 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="stylesheet" href="/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-  <title>Multi-step form</title>
-  
 </head>
 <body>
-  <section class="container">
-    <article class="sidebar">
-      <!-- Sidebar start -->
-      <div class="step-one">
-        <div class="number">1</div>
-        <div class="step-one-details">
-          <h3>STEP 1</h3>
-          <h2>YOUR INFO</h2>
+  <div class="container">
+    <section class="steps">
+      <article class="step">
+        <h1 class="number">1</h1>
+        <div class="step-info">
+          <h2 class="step-info-title">Step 1</h2>
+          <h1 class="step-info-description">Your info</h1>
         </div>
-      </div>
-      <div class="step-two">
-        <div class="number">2</div>
-        <div class="step-two-details">
-          <h3>STEP 2</h3>
-          <h2>SELECT PLAN</h2>
+      </article>
+      <article class="step">
+        <h1 class="number">2</h1>
+        <div class="step-info">
+          <h2 class="step-info-title">Step 1</h2>
+          <h1 class="step-info-description">select plan</h1>
         </div>
-      </div>
-      <div class="step-three">
-        <div class="number">3</div>
-        <div class="step-three-details">
-          <h3>STEP 3</h3>
-          <h2>ADD-ONS</h2>
+      </article>
+      <article class="step">
+        <h1 class="number">3</h1>
+        <div class="step-info">
+          <h2 class="step-info-title">Step 1</h2>
+          <h1 class="step-info-description">add-ons</h1>
         </div>
-      </div>
-      <div class="step-four">
-        <div class="number">4</div>
-        <div class="step-four-details">
-          <h3>STEP 4</h3>
-          <h2>SUMMARY</h2>
+      </article>
+      <article class="step">
+        <h1 class="number">4</h1>
+        <div class="step-info">
+          <h2 class="step-info-title">Step 1</h2>
+          <h1 class="step-info-description">summary</h1>
         </div>
-      </div>
-    </article>
-
-    <article class="form">
-      <form action="submit">
-        <div class="page page-1">
-          <div class="personal-info">
-            <h1>Personal info</h1>
-            <p>Please provide your name, email adress, and phone number.</p>
-          </div>
+      </article>
+    </section>
+    <section class="slides">
+      <article class="slide">
+        <h1 class="slide-title">Personal Info</h1>
+        <p class="slide-info">Please provide your name, email adress, and phone number.</p>
+        <div class="first-inputs">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="e.g. John Doe" required>
-          <label for="email">Email Adress</label>
-          <input type="text" id="email" placeholder="e.g. JohnDoe@unknown.com" required>
+          <input type="text" id="name" placeholder="e.g Stephen King">
+          <label for="Email">Email Address</label>
+          <input type="text" id="email" placeholder="e.g stephenking@lorem.com">
           <label for="phone">Phone Number</label>
-          <input type="text" id="phone" placeholder="e.g. +89 89 989" required>
+          <input type="text" id="phone" placeholder="e.g. +1 234 567 890">
         </div>
-        <div class="page page-2">
-          <div class="personal-info">
-            <h1>Select your plan</h1>
-            <p>You have the option of monthly or yearly billing.</p>
-          </div>
-          <div class="second-page">
-            <button type='button' class="second-page-btn arcade">
-              <img src="/assets/images/icon-arcade.svg" alt="arcade-icon">
-              <div class="arcade-details thumbnail">
-                <h4 class="plan-data">Arcade</h2>
-                <p class="plan-price">$9/mo</p>
-                <p class="bonus">2 months free</p>
-              </div>
-            </button>
-            <button type='button' class="second-page-btn advanced">
-              <img src="/assets/images/icon-advanced.svg" alt="advanced-icon">
-              <div class="arcade-details thumbnail">
-                <h4 class="plan-data">Advanced</h2>
-                <p class="plan-price">$12/mo</p>
-                <p class="bonus">2 months free</p>
-              </div>
-            </button>
-            <button type='button' class="second-page-btn pro">
-              <img src="/assets/images/icon-pro.svg" alt="pro-icon">
-              <div class="arcade-details thumbnail">
-                <h4 class="plan-data">Pro</h2>
-                <p class="plan-price">$15/mo</p>
-                <p class="bonus">2 months free</p>
-              </div>
-            </button>
-            <div class="toggle"> 
-              <p class="monthly">Monthly</p>
-              <label class="switch">
-                <input type="checkbox" class="toggle" >
-                <span class="slider round"></span>
-              </label>
-              <p class="yearly">Yearly</p>
-            </div>
-          </div>
-        </div>
-        <div class="page page-3">
-          <div class="personal-info">
-            <h1>Select your plan</h1>
-            <p>You have the option of monthly or yearly billing.</p>
-          </div>
-          <div class="add-ons">
-            <button type='button' class="third-page-btn">
-              <input type="checkbox" class='select-plan'>
-              <div class="text">
-                <h3>Online Service</h3>
-                <p>Access to multiplayer games</p>
-              </div>
-              <p class="membership"></p>
-            </button>
-            <button type='button' class="third-page-btn">
-              <input type="checkbox" class='select-plan'>
-              <div class="text">
-                <h3>Larger Storage</h3>
-                <p>Extra 1TB of cloud save</p>
-              </div>
-              <p class="membership"></p>
-            </button>
-            <button type='button' class="third-page-btn">
-              <input type="checkbox" class='select-plan'>
-              <div class="text">
-                <h3>Customizable profile</h3>
-                <p>Custom theme on your profile</p>
-              </div>
-              <p class="membership"></p>
-            </button>
-          </div>
-        </div>
-        <div class="page page-4">
-          <div class="personal-info">
-            <h1>Finishing up</h1>
-            <p>Double-check everything looks OK before confirming.</p>
-          </div>
-          <div class="summary">
-            <div class="category">
-              <div class="category-details">
-                <p class="selected-plan">Arcade</p>
-                <a href="#">Change</a>
-              </div>
-                <p class="category-price">2</p>
-            </div>
-
-            <div class="summary-service">
-              <div class="service-selection">
-                <p class="online">online</p>
-                <p class="online-price">2</p>
-              </div>
-              <div class="storage-selection">
-                <p class="storage">storage</p>
-                <p class="storage-price">3</p>
-              </div>
-            </div>
-
-          </div>
-          <div class="total">
-            <p class="total-plan">Total</p>
-            <p class="total-price">price</p>
-          </div>
-        </div>
-        <div class="buttons">
-          <button type="button" class="prev">Go back</button>
-          <button type="button" class="next">Next Step</button>
-          <button class="submit">Confirm</button>
-        </div>
-      </form>
-    </article>
-  </section>
-
-<script src="script.js"></script>
+      </article>
+      <article class="slide plan">
+        <h1 class="slide-title">Select your plan</h1>
+        <p class="slide-info">You have the option of monthly or yearly billing.</p>
+      </article>
+      <article class="slide add-ons">
+        <h1 class="slide-title">Pick add-ons</h1>
+        <p class="slide-info">Add-ons help enhance your gaming experinece.</p>
+      </article>
+      <article class="slide finish">
+        <h1 class="slide-title">Finishing Up</h1>
+        <p class="slide-info">Double-check everything looks OK before onfirming.</p>
+      </article>
+      <article class="slide result">
+        <h1 class="slide-title">Thank you</h1>
+        <p class="slide-info">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com</p>
+      </article>
+      <div class="buttons">
+        <button class="prev">Go back</button>
+        <button class="next">Next Step</button>
+        <button class="confirm">Confirm</button>
+      </div>
+    </section>
+  </div>
 </body>
+<script src="/script.js"></script>
 </html>
